@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  fe:
+    image: nashli/fe
+    container_name: "nashli-fe"
+    build:
+      context: ../submodules/fe
+      dockerfile: Dockerfile.local
+    volumes:
+      - ../submodules/fe:/app
+    environment:
+      REACT_APP_APP_ENV: local
+      REACT_APP_BE_HOST: ${BE_HOST}
+      REACT_APP_BE_PORT: ${BE_PORT}
+    ports:
+      - "${FE_PORT}:8080"
+    stdin_open: true
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

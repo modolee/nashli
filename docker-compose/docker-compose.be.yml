@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  be:
+    image: nashli/be
+    container_name: "nashli-be"
+    build:
+      context: ../submodules/be
+      dockerfile: Dockerfile.local
+    volumes:
+      - ../submodules/be:/app
+    environment:
+      APP_ENV: local
+      BE_HOST: ${BE_HOST}
+      BE_PORT: ${BE_PORT}
+      FE_HOST: ${FE_HOST}
+      FE_PORT: ${FE_PORT}
+      MONGO_HOST: ${MONGO_HOST}
+      MONGO_PORT: ${MONGO_PORT}
+      MONGO_DATABASE: ${MONGO_DATABASE}
+      MONGO_USERNAME: ${MONGO_USERNAME}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "${BE_PORT}:8080"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
