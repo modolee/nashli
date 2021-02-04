@@ -1,0 +1,8 @@
+[submodule "submodules/be"]
+	path = submodules/be
+	url = git@github.com:modolee/nashli-be.git
+	branch = main
+[submodule "submodules/fe"]
+	path = submodules/fe
+	url = git@github.com:modolee/nashli-fe.git
+	branch = main
