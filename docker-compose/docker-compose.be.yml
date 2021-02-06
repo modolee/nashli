@@ -10,9 +10,7 @@ services:
     volumes:
       - ../submodules/be:/app
     environment:
-      APP_ENV: local
-      BE_HOST: ${BE_HOST}
-      BE_PORT: ${BE_PORT}
+      APP_ENV: ${APP_ENV}
       FE_HOST: ${FE_HOST}
       FE_PORT: ${FE_PORT}
       MONGO_HOST: ${MONGO_HOST}
@@ -20,6 +18,8 @@ services:
       MONGO_DATABASE: ${MONGO_DATABASE}
       MONGO_USERNAME: ${MONGO_USERNAME}
       MONGO_PASSWORD: ${MONGO_PASSWORD}
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
     ports:
       - "${BE_PORT}:8080"
     ulimits:

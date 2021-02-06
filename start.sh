@@ -20,13 +20,13 @@ function menu()
 {
   PS3="Please select which option > "
   COLUMNS=30
-  options=("Build and Run" "Run" "Quit")
+  options=("Run" "Build and Run" "Quit")
   select yn in "${options[@]}"; do
-      case $yn in
-          "Build and Run" ) build "$1"; run "$1"; break;;
-          "Run" )           run "$1"; break;;
-          "Quit" )          exit;;
-      esac
+    case $yn in
+      "Run" )           run "$1"; break;;
+      "Build and Run" ) build "$1"; run "$1"; break;;
+      "Quit" )          exit;;
+    esac
   done
 }
 
