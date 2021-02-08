@@ -13,6 +13,7 @@ services:
       APP_ENV: ${APP_ENV}
       FE_HOST: ${FE_HOST}
       FE_PORT: ${FE_PORT}
+      FE_AD_FREE_HOST: ${FE_AD_FREE_HOST}
       MONGO_HOST: ${MONGO_HOST}
       MONGO_PORT: ${MONGO_PORT}
       MONGO_DATABASE: ${MONGO_DATABASE}
