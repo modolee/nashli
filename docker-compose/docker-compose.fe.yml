@@ -11,6 +11,7 @@ services:
       - ../submodules/fe:/app
     environment:
       REACT_APP_APP_ENV: ${APP_ENV}
+      REACT_APP_AD_FREE: ${AD_FREE}
       REACT_APP_BE_HOST: ${BE_HOST}
       REACT_APP_BE_PORT: ${BE_PORT}
     ports:
