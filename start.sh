@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CMD="docker-compose \
+  --env-file .env \
   -p nashli \
   -f ./docker-compose/docker-compose.be.yml \
   -f ./docker-compose/docker-compose.fe.yml \
